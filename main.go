@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	// Cria uma conexão com o CLP Siemens
+	// Cria uma conexão com o CLP
 	conn := gos7.NewClient(192.168.0.100, 0x01, 0x10)
 	err := conn.Connect()
 	if err != nil {
