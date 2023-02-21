@@ -17,3 +17,6 @@ n the industrial area, thus having a wider range of possibilities to choose thei
 
 <h1>But how does the project work anyway?</h1>
 <h5>This project serves as a PLC supervisor, as it is not yet possible to upload a Golang code to the PLC, but with the possibility of Go to create Windows or Linux applications, then we could have an interface all in Go to control the PLC.</h5>
+
+
+<img src="https://user-images.githubusercontent.com/70967912/220453268-ed1de8f5-b02e-4674-9e05-3471f0e1f540.jpeg">
