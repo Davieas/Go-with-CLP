@@ -22,6 +22,6 @@ n the industrial area, thus having a wider range of possibilities to choose thei
 <img src="https://user-images.githubusercontent.com/70967912/220453268-ed1de8f5-b02e-4674-9e05-3471f0e1f540.jpeg">
 
 
-<h1>Getting Started in the project</h1>
+<h6>If you have something to add, feel free to fork the project and contribute to the project, also remember to use the instructions from the gos7 library, the Project's main library</h6>
 
 
