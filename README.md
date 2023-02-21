@@ -20,3 +20,8 @@ n the industrial area, thus having a wider range of possibilities to choose thei
 
 
 <img src="https://user-images.githubusercontent.com/70967912/220453268-ed1de8f5-b02e-4674-9e05-3471f0e1f540.jpeg">
+
+
+<h1>Getting Started in the project</h1>
+
+
