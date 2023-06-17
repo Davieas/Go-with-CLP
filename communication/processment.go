@@ -3,6 +3,7 @@ package communication
 import (
 
 	"fmt"
+	"net"
 
 )
 
@@ -13,13 +14,16 @@ func portProcessment(port string) error {
 		return nil
 
 }
+func GetTCPIP() (string, error) {
+	
+	IP := ""
+	fmt.Println("Digite o Ip do seu CLP: ")
+	fmt.Scanln(IP)
 
-func TurnOnLamp() {
-	// Aqui você adiciona a lógica para ligar a lâmpada no CLP
-	fmt.Println("Ligando a lâmpada...")
-}
+	// Verifique se o endereço IP do CLP é válido
+	if ip := net.ParseIP(IP); ip == nil {
+		return "", fmt.Errorf("Endereço IP inválido do CLP: %s", IP)
+	}
 
-func TurnOffLamp() {
-	// Aqui você adiciona a lógica para desligar a lâmpada no CLP
-	fmt.Println("Desligando a lâmpada...")
+	return IP, nil
 }
