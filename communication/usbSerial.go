@@ -36,3 +36,10 @@ func USBSerial() {
 		}
 	}
 }
+
+func CheckUSBSerialCommunication() error {
+	
+	return nil
+}
+
+

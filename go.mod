@@ -5,6 +5,7 @@ go 1.20
 require github.com/robinson/gos7 v0.0.0-20230126084723-c85e13033f3e
 
 require (
+	github.com/goburrow/modbus v0.1.0
 	github.com/goburrow/serial v0.1.0
 	github.com/google/gousb v1.1.2
 	github.com/jacobsa/go-serial v0.0.0-20180131005756-15cf729a72d4
