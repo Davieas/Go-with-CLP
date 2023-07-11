@@ -7,13 +7,14 @@ import (
 	"log"
 	"github.com/goburrow/modbus"
 	"time"
+	
 
 )
 
 
-func Tcp(){
+func Tcp(i string) string{
 	
-	tcpIpHandler := modbus.NewTCPClientHandler("192.0.0.1:8080")
+	tcpIpHandler := modbus.NewTCPClientHandler("192.168.0.1:8080")
 	handler := tcpIpHandler  // IP e porta do CLP
 	handler.Timeout = 2 * time.Second                      // Tempo limite para a comunicação
 	err := handler.Connect()
@@ -45,6 +46,8 @@ func Tcp(){
 		log.Fatalf("Erro ao desligar a lâmpada: %v", err)
 	}
 	fmt.Println("Lâmpada desligada!")
+
+	return "100"
 }
 
 func CheckTcpCommunication() error {

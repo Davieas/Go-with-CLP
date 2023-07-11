@@ -8,12 +8,11 @@ import (
 
 func RunCLP(connectionType string) string {
 
-
 	switch connectionType {
 	case "Tcp":
-		communication.Tcp()
-		TcpVerification()
-		fmt.Print("Controlando CLP!!")
+		i := ""
+		fmt.Println("Digite o Ip do Respectivo CLP:")
+		fmt.Scanf(i)
 	default:
 		fmt.Println("Tipo de conexão inválido.")
 		break
@@ -21,14 +20,12 @@ func RunCLP(connectionType string) string {
 
 	return connectionType
 
-
 }
 
-func TcpVerification(){
+func TcpVerification() {
 
 	if err := communication.CheckTcpCommunication(); err != nil {
 		log.Fatalf("Erro de comunicação via Ethernet: %v", err)
 	}
-
 
 }

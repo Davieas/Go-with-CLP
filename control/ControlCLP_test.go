@@ -13,7 +13,6 @@ func TestControl(t *testing.T){
 
 		t.Error("Erro encontrado")
 
-
 	}
 
 }
