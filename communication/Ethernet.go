@@ -12,18 +12,16 @@ import (
 
 
 func Tcp(){
-
 	
-	handler := modbus.NewTCPClientHandler("192.168.0.1:502") // IP e porta do CLP
+	tcpIpHandler := modbus.NewTCPClientHandler("192.0.0.1:8080")
+	handler := tcpIpHandler  // IP e porta do CLP
 	handler.Timeout = 2 * time.Second                      // Tempo limite para a comunicação
 	err := handler.Connect()
 	if err != nil {
-		log.Fatalf("Erro ao conectar ao CLP via Ethernet: %v", err)
+		log.Fatalf("Erro ao conectar ao CLP via Tcp: %v", err)
 	}
 	defer handler.Close()
 	
-	
-
 	fmt.Print("Tcp Connection closed!!!!")
 
 	client := modbus.NewClient(handler)
@@ -47,12 +45,9 @@ func Tcp(){
 		log.Fatalf("Erro ao desligar a lâmpada: %v", err)
 	}
 	fmt.Println("Lâmpada desligada!")
-
-
 }
-func CheckTcpCommunication() error {
 
-	
+func CheckTcpCommunication() error {
 	return nil
 }
 

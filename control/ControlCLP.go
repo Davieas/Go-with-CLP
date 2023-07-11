@@ -6,32 +6,22 @@ import (
 	"log"
 )
 
-func RunCLP(connectionType string){
+func RunCLP(connectionType string) string {
 
 
 	switch connectionType {
-	case "USB":
-		communication.USBSerial()
-		usbSerialVerification()
-		
 	case "Tcp":
 		communication.Tcp()
 		TcpVerification()
+		fmt.Print("Controlando CLP!!")
 	default:
 		fmt.Println("Tipo de conexão inválido.")
+		break
 	}
 
-	fmt.Println("Controlando o CLP...")
+	return connectionType
 
 
-}
-func usbSerialVerification() {
-	// Verifica a comunicação via USB Serial
-	if err := communication.CheckUSBSerialCommunication(); err != nil {
-		log.Fatalf("Erro de comunicação via USB Serial: %v", err)
-	}
-
-	
 }
 
 func TcpVerification(){
