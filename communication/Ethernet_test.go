@@ -9,15 +9,9 @@ import (
 
 func TestTcp(t *testing.T){
 
-	if ( communication.Tcp("") != ""){
+	if ( communication.Tcp() != ""){
 
 		t.Error("ERRO IN COMMUNICATION REVIEW CODE")
 
 	}
-
-
-
-
-
-
 }
