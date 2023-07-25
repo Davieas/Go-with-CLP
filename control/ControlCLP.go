@@ -6,19 +6,12 @@ import (
 	"log"
 )
 
-func RunCLP(connectionType string) string {
+func RunCLP()  {
 
-	switch connectionType {
-	case "Tcp":
 		i := ""
 		fmt.Println("Digite o Ip do Respectivo CLP:")
 		fmt.Scanf(i)
-	default:
-		fmt.Println("Tipo de conexão inválido.")
-		break
-	}
 
-	return connectionType
 
 }
 
