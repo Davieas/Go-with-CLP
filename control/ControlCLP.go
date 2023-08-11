@@ -1,24 +1,17 @@
 package control
 
 import (
-	"fmt"
+	_"fmt"
 	"github.com/Davieas/Industrial-GolangCLP/communication"
 	"log"
 )
 
-func RunCLP(connectionType string) string {
+func RunCLP()  {
 
-	switch connectionType {
-	case "Tcp":
-		i := ""
-		fmt.Println("Digite o Ip do Respectivo CLP:")
-		fmt.Scanf(i)
-	default:
-		fmt.Println("Tipo de conexão inválido.")
-		break
-	}
+//i := ""
+//fmt.Println("Digite o Ip do Respectivo CLP:")
+//fmt.Scanf(i)
 
-	return connectionType
 
 }
 

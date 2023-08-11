@@ -7,14 +7,20 @@ import (
 	"log"
 	"github.com/goburrow/modbus"
 	"time"
+	"github.com/Davieas/Industrial-GolangCLP/tagDB"
 	
 
 )
 
 
-func Tcp(i string) string{
+func Tcp() string{
+
+//fmt.Print("Digite o endereço IP e a porta (exemplo: 192.168.0.1:8080): ")
+//var ip string
+//fmt.Scanln(&ip)
+
 	
-	tcpIpHandler := modbus.NewTCPClientHandler("192.168.0.1:8080")
+	tcpIpHandler := modbus.NewTCPClientHandler(tagDB.TagWindow())
 	handler := tcpIpHandler  // IP e porta do CLP
 	handler.Timeout = 2 * time.Second                      // Tempo limite para a comunicação
 	err := handler.Connect()
@@ -53,4 +59,3 @@ func Tcp(i string) string{
 func CheckTcpCommunication() error {
 	return nil
 }
-
