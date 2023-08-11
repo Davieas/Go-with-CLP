@@ -19,26 +19,29 @@ func TagWindow() string{
 
 	// Widgets da interface
 	nomeTagEntry := widget.NewEntry()
-	ipTagEntry  := widget.NewEntry()
+
 	adicionarButton := widget.NewButton("Adicionar", func() {
 		nomeTag := nomeTagEntry.Text
 		if nomeTag != "" {
 			
 			
-			_, err := "Tag ADD", "Adicionado"
+			errorTag, err := "Erro na Tag ou Outro Erro", "Adicionado"
 			if err != "" {
-				log.Println("Erro ao inserir a tag no banco de dados:", err)
+				log.Println("Tag adicionada ao banco de dados:", err)
 			} else {
-				fmt.Println("Tag adicionada ao banco de dados:", nomeTag)
+				fmt.Println("Erro ao Inserir Tag", errorTag)
 			}
 		}
 		nomeTagEntry.SetText("")
 	})
+
+	ipTagEntry  := widget.NewEntry()
+
 	adicionarIpButton := widget.NewButton("Adicionar IP", func() {
 		ipTag := ipTagEntry.Text
 		if ipTag != "" {
 			
-			nonIp, err := "TAG ADD", "Adicionado"
+			nonIp, err := "Ip Não Encontrado", "Adicionado"
 			if err != "" {
 				log.Println("Ip Do CLP Inserido", err)
 			} else {
