@@ -15,21 +15,9 @@ import (
 
 func Tcp() string{
 
-<<<<<<< HEAD
-//fmt.Print("Digite o endereço IP e a porta (exemplo: 192.168.0.1:8080): ")
-//var ip string
-//fmt.Scanln(&ip)
 
 	
 	tcpIpHandler := modbus.NewTCPClientHandler(tagDB.TagWindow())
-=======
-	fmt.Print("Digite o endereço IP e a porta (exemplo: 192.168.0.1:8080): ")
-	var ip string
-	fmt.Scanln(&ip)
-
-	
-	tcpIpHandler := modbus.NewTCPClientHandler(ip)
->>>>>>> origin/master
 	handler := tcpIpHandler  // IP e porta do CLP
 	handler.Timeout = 2 * time.Second                      // Tempo limite para a comunicação
 	err := handler.Connect()

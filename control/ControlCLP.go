@@ -8,15 +8,9 @@ import (
 
 func RunCLP()  {
 
-<<<<<<< HEAD
 //i := ""
 //fmt.Println("Digite o Ip do Respectivo CLP:")
 //fmt.Scanf(i)
-=======
-		i := ""
-		fmt.Println("Digite o Ip do Respectivo CLP:")
-		fmt.Scanf(i)
->>>>>>> origin/master
 
 
 }
