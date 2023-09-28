@@ -6,14 +6,6 @@ import (
 	"log"
 )
 
-func RunCLP()  {
-
-//i := ""
-//fmt.Println("Digite o Ip do Respectivo CLP:")
-//fmt.Scanf(i)
-
-
-}
 
 func TcpVerification() {
 
