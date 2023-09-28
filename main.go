@@ -14,6 +14,6 @@ func main() {
 	tagDB.TagWindow()
 	fmt.Print("Tela Criada")
 	communication.Tcp()
-	control.RunCLP()
+	control.TcpVerification()
 }	
 
