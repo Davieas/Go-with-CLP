@@ -1,69 +1,39 @@
 package communication
 
-
 import (
-
-	"fmt"
-	"log"
-	"github.com/goburrow/modbus"
-	"github.com/tarm/serial"
-	"time"
-	"github.com/Davieas/Industrial-GolangCLP/tagDB"
-	
-
+    "bufio"
+    "fmt"
+    "net"
+    "os"
+    "strings"
 )
 
+func TcpConnection() {
+    // Prompt the user to enter the IP address of the logical programmer controller
+    fmt.Print("Enter the IP address of the logical programmer controller: ")
+    reader := bufio.NewReader(os.Stdin)
+    lpcIP, err := reader.ReadString('\n')
+    if err != nil {
+        fmt.Println("Error reading input:", err)
+        os.Exit(1)
+    }
+    lpcIP = strings.TrimSpace(lpcIP)
 
-func Tcp() string{
+    // Define the port of the logical programmer controller
+    lpcPort := "8080"
 
-	c := &serial.Config{Name: "COM5", Baud: 115200}
-	s, err := serial.OpenPort(c)
-	if err != nil {
-			log.Fatal(err)
-	}
+    // Construct the address of the logical programmer controller
+    lpcAddr := fmt.Sprintf("%s:%s", lpcIP, lpcPort)
 
-	
-	tcpIpHandler := modbus.NewTCPClientHandler(tagDB.TagWindow())
-	handler := tcpIpHandler  // IP e porta do CLP
-	handler.Timeout = 2 * time.Second                      // Tempo limite para a comunicação
-	err = handler.Connect()
-	if err != nil {
-		log.Fatalf("Erro ao conectar ao CLP via Tcp: %v", err)
-	}
-	defer handler.Close()
-	
-	fmt.Print("Tcp Connection closed!!!!")
+    // Connect to the logical programmer controller
+    conn, err := net.Dial("tcp", lpcAddr)
+    if err != nil {
+        fmt.Println("Error connecting:", err)
+        os.Exit(1)
+    }
+    defer conn.Close()
 
-	client := modbus.NewClient(handler)
+    fmt.Println("Connected to Logical Programmer Controller")
 
-	buf := make([]byte, 128)
-      _, err = s.Read(buf)
-      if err != nil {
-              log.Fatal(err)
-      }
-
-	
-
-	address := uint16(0x0001) // Endereço do registrador para controlar a lâmpada
-	coilStatus := uint16(0x1)       // Ligar a lâmpada
-
-    _ ,err = client.WriteSingleCoil(address, coilStatus)
-	if err != nil {
-		log.Fatalf("Erro ao ligar a lâmpada: %v", err)
-	}
-	fmt.Println("Lâmpada ligada!")
-
-	time.Sleep(2 * time.Second)
-	coilStatus = uint16(0x1)
-	_,err = client.WriteSingleCoil(address, coilStatus)
-	if err != nil {
-		log.Fatalf("Erro ao desligar a lâmpada: %v", err)
-	}
-	fmt.Println("Lâmpada desligada!")
-
-	return "100"
-}
-
-func CheckTcpCommunication() error {
-	return nil
+  
 }

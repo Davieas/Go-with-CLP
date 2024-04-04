@@ -10,10 +10,11 @@ import (
 
 func main() {
 
-
-	tagDB.TagWindow()
-	fmt.Print("Create Window")
-	communication.Tcp()
-	control.TcpVerification()
+control.Authentication()
+control.VerifyUser()
+communication.TcpConnection()
+tagDB.TagWindow()
+// Printing the current tags in the database
+fmt.Print("Succefuly, connected CLP!!")
 }	
 
