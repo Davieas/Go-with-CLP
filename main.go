@@ -11,7 +11,6 @@ import (
 func main() {
 
 control.Authentication()
-control.VerifyUser()
 communication.TcpConnection()
 tagDB.TagWindow()
 // Printing the current tags in the database
