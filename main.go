@@ -12,7 +12,7 @@ func main() {
 
 
 	tagDB.TagWindow()
-	fmt.Print("Tela Criada")
+	fmt.Print("Create Window")
 	communication.Tcp()
 	control.TcpVerification()
 }	

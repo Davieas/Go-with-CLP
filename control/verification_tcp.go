@@ -10,7 +10,7 @@ import (
 func TcpVerification() {
 
 	if err := communication.CheckTcpCommunication(); err != nil {
-		log.Fatalf("Erro de comunicação via Ethernet: %v", err)
+		log.Fatalf("Erro de comunicação via TCP: %v", err)
 	}
 
 }
